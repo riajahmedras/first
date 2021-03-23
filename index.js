@@ -11,8 +11,15 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-   res.send("Thank your for calling me here!");
+   const fruit = {
+      product: 'Mango',
+      price: 100
+   }
+   res.send(fruit);
+})
+app.get('/fruits/banana', (req, res) => {
+   res.send({fruit: 'banana', quantity: 1000, price: 3000});
 })
 
 
-app.listen(3000, () => console.log('listening to port 3000'));
+app.listen(3001, () => console.log('listening to port 3000'));
